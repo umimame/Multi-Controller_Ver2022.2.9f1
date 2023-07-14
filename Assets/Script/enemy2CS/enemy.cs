@@ -7,16 +7,19 @@ using static Unity.VisualScripting.Member;
 
 public class Enemy : MonoBehaviour
 {
+    private Rigidbody rb;
     private int hp;
     public int score;
-    public float speed;
-    public float attackspeed;
-    public float distance;
-    private bool movejudge;
-    private bool particlejudge;
+    public int attackdistance;//攻撃開始距離
+    public float moveSpeed;//通常移動時のスピード
+    public float attackspeed;//攻撃時のスピード
+    public float distance;//自身とターゲットの距離
+    public bool movejudge;
+    public bool particlejudge;
     public bool attackjudge;
     public bool onetime;
-    public bool Atonetime;
+    public bool atonetime;
+    private Vector3 _forwardDirection = Vector3.forward;
     // 自身のTransform
     [SerializeField] private Transform _self;
 
@@ -29,56 +32,80 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     [Tooltip("発生させるエフェクト(パーティクル)")]
     private ParticleSystem particle;
+
+
+    //テスト用
+
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log("あたり");
         movejudge = false;
+        //プレイヤータグが付いたものに接触したら自身を破壊する
+        if (collision.gameObject.CompareTag("player"))
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnCollisionExit(Collision collision)
     {
-        StartCoroutine(DelayCoroutine());
+        //StartCoroutine(DelayCoroutine());
 
     }
     // Start is called before the first frame update
     void Start()
     {
-        speed = 0.01f;
-        attackspeed = 0.01f;
+        rb = GetComponent<Rigidbody>();
         hp = 100;
         score = 100;
+        attackdistance = 10;
+        moveSpeed = 10.0f;
+        attackspeed = 15.0f;
+
         movejudge = true;
-        particlejudge = false;
+        particlejudge = true;
         onetime = true;
-        Atonetime = true;
+        atonetime = true;
         attackjudge = false;
+
+
+        StartCoroutine(GenerateParticle());
+
+
+
     }
     // Update is called once per frame
     void Update()
     {
-        if (distance <= 10)
-        {
-            movejudge = false;
-        }
-        else { movejudge = true; }
-        Move();
-        StartCoroutine(Interruption());
+        //RotateSelfをUpDateで実装すると攻撃中もプレイヤーの方を向くから追尾攻撃になる
         //RotateSelf();
+
+        Move();
+
         Attack();
         Dmg();
         distance = Vector3.Distance(_self.position, _target.position);
 
-        StartParticle();
+        //StartParticle();
 
     }
-    private void Move()
+
+
+    //movejudeがtrueの間自身の向き（プレイヤーのいる方向）に移動
+    //distanceがattackdistance未満になったらmovejudgeをfalseにする
+    void Move()
     {
-        // 自動前進
-        //transform.position += transform.forward * speed;
+        if (distance < attackdistance)
+        {
+            movejudge = false;
+        }
+        else { StartCoroutine(DelayCoroutine()); }
         if (movejudge)
         {
-            transform.position += transform.forward * speed;
+            Vector3 moveDirection = transform.TransformDirection(_forwardDirection);
+            rb.velocity = moveDirection * moveSpeed;
         }
     }
+   //プレイヤーの方向を向く
     void RotateSelf()
     {
         // ターゲットへの向きベクトル計算
@@ -91,23 +118,28 @@ public class Enemy : MonoBehaviour
         _self.rotation = lookAtRotation * offsetRotation;
 
     }
+    //自身とプレイヤー距離がattackdistance未満になったら突進
     void Attack()
     {
-        if (distance <= 10.0f)
+        StartCoroutine(Interruption());
+        if (distance < attackdistance)
         {
-            if (Atonetime)
+            if (atonetime)
             {
                 attackjudge = true;
-                Atonetime = false;
+                atonetime = false;
             }
         }
-        else { Atonetime = true; }
+        else { atonetime = true; }
         if (attackjudge)
         {
-            transform.position += transform.forward * attackspeed;
+            Vector3 moveDirection = transform.TransformDirection(_forwardDirection);
+            rb.velocity = moveDirection * attackspeed;
+            //attackjudgeをfalseにする
             StartCoroutine(DelayAttackCoroutine());
         }
     }
+    //Gを押したらhp-10,hpが０になったら自身を破壊
     void Dmg()
     {
         if (Input.GetKeyDown(KeyCode.G))
@@ -120,21 +152,25 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    //１秒待ってmovejudgeをtrueにする
     private IEnumerator DelayCoroutine()
     {
         yield return new WaitForSeconds(1);
         movejudge = true;
     }
+    //1秒待ってattackjudgeをfalseにする
     private IEnumerator DelayAttackCoroutine()
     {
         yield return new WaitForSeconds(1);
         attackjudge = false;
     }
+    //１秒待ってparticlejudgeをfalseにする
     private IEnumerator OneSecDelayCoroutine()
     {
         yield return new WaitForSeconds(1);
-
+        particlejudge = false;
     }
+    //attackjudgeがfalseになるまでRotateSelfを中断
     private IEnumerator Interruption()
     {
         //attackjudgeがfalseになるまで待機
@@ -143,8 +179,8 @@ public class Enemy : MonoBehaviour
     }
     void StartParticle()
     {
-        // 当たった相手が"Player"タグを持っていたら
-        if (distance <= 10.0f)
+        // 敵との距離が10未満なら
+        if (distance < 10.0f)
         {
             if (onetime)
             {
@@ -152,7 +188,9 @@ public class Enemy : MonoBehaviour
                 onetime = false;
             }
         }
+        //プレイヤーとの距離が10以上なら
         else { onetime = true; }
+
         if (particlejudge)
         {
             // パーティクルシステムのインスタンスを生成する。
@@ -164,7 +202,33 @@ public class Enemy : MonoBehaviour
             // インスタンス化したパーティクルシステムのGameObjectを削除する。(任意)
             // ※第一引数をnewParticleだけにするとコンポーネントしか削除されない。
             Destroy(newParticle.gameObject, 1.0f);
-            particlejudge = false;
+            StartCoroutine(OneSecDelayCoroutine());
+            //particlejudge = false;
         }
     }
+
+
+    IEnumerator GenerateParticle()
+    {
+        while (true)
+        {
+            // 敵との距離が10未満なら
+            if (distance < attackdistance && particlejudge)
+            {
+                GenerateNewParticle();
+                particlejudge = false;
+                yield return new WaitForSeconds(1.0f);
+                particlejudge = true;
+            }
+            yield return null;
+        }
+    }
+
+    void GenerateNewParticle()
+    {
+        ParticleSystem newParticle = Instantiate(particle, transform.position, Quaternion.identity);
+        newParticle.Play();
+        Destroy(newParticle.gameObject, 1.0f);
+    }
+
 }
