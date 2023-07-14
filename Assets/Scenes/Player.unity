@@ -318,8 +318,8 @@ GameObject:
   - component: {fileID: 283706036}
   - component: {fileID: 283706035}
   - component: {fileID: 283706034}
-  - component: {fileID: 283706038}
   - component: {fileID: 283706039}
+  - component: {fileID: 283706038}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -425,24 +425,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68b4d132446a8d4db6c7a475023f873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  moveSchedule: {x: 0, y: 0, z: 0}
-  curve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  time: 0
   speed:
     level:
       now: 0
       max: 0
     increment: 0
-    basic: 10
+    basic: 4.46
     entity: 0
     maxEntity: 0
     minEntity: 0
+  engine: {fileID: 0}
+  move: {fileID: 0}
 --- !u!54 &283706039
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -667,7 +660,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1763584643
 GameObject:
@@ -754,13 +747,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763584643}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1763584647
 MonoBehaviour:
@@ -774,8 +767,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2614758958c8c24eaed2e53dd89f9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mx: 0
+  my: 0
   player: {fileID: 283706033}
-  posOffset: {x: 0, y: 0, z: -10}
+  distance: -10
+  offset: {x: 0, y: 0, z: 0}
 --- !u!4 &2018246332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5459997865591045608, guid: 23561b1526c7b544785dfbbec784acdb, type: 3}
