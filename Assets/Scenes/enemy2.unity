@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 632212908}
   m_Layer: 0
   m_Name: enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,12 +357,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  speed: 0
+  attackdistance: 0
+  moveSpeed: 5
   attackspeed: 0
   distance: 0
+  movejudge: 0
+  particlejudge: 0
   attackjudge: 0
   onetime: 0
-  Atonetime: 0
+  atonetime: 0
   _self: {fileID: 632212907}
   _target: {fileID: 1213632063}
   _forward: {x: 0, y: 0, z: 1}
@@ -570,7 +573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213632058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.28, z: 0}
+  m_LocalPosition: {x: 0, y: 8.28, z: -26.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -684,11 +687,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282611277}
-  m_LocalRotation: {x: 0.12674399, y: -0, z: -0, w: 0.9919355}
-  m_LocalPosition: {x: 0, y: 2.63, z: -6.19}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 28.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1213632063}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 14.563, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
