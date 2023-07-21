@@ -3,8 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - Enemy
+=======
+  tags: []
+>>>>>>> f2c1e46a (map)
   layers:
   - Default
   - TransparentFX
