@@ -8,10 +8,14 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Engine engine;
     [SerializeField] private MoveByCameraForward move;
 <<<<<<< HEAD
+<<<<<<< HEAD
     [SerializeField] private Vector3 cameraDirection;
 =======
     
 >>>>>>> e4c41e2d (Playerのクラスを整備。)
+=======
+    [SerializeField] private Vector3 cameraDirection;
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
     private void Start()
     {
         speed.Set();
@@ -27,10 +31,15 @@ public class PlayerScript : MonoBehaviour
     {
         engine.UpdateOnAction(move.Update);
 <<<<<<< HEAD
+<<<<<<< HEAD
         cameraDirection = Camera.main.transform.position - transform.position;
         transform.eulerAngles = new Vector3(0.0f, cameraDirection.y, 0.0f);
 =======
 >>>>>>> e4c41e2d (Playerのクラスを整備。)
+=======
+        cameraDirection = Camera.main.transform.position - transform.position;
+        transform.eulerAngles = new Vector3(0.0f, cameraDirection.y, 0.0f);
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
     }
 
     private void InputMove()

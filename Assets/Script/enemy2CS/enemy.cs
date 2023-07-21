@@ -8,24 +8,41 @@ using static Unity.VisualScripting.Member;
 public class Enemy : MonoBehaviour
 {
     private Rigidbody rb;
+<<<<<<< HEAD
     private int hp;
     public int score;
+=======
+    private int hp;//自身のhp
+    public int score;//倒したときにプレイヤーに加算されるスコア
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
     public int attackdistance;//攻撃開始距離
     public float moveSpeed;//通常移動時のスピード
     public float attackspeed;//攻撃時のスピード
     public float distance;//自身とターゲットの距離
+<<<<<<< HEAD
     public bool movejudge;
     public bool particlejudge;
     public bool attackjudge;
     public bool onetime;
     public bool atonetime;
+=======
+    public bool movejudge;//移動判定
+    public bool particlejudge;//パーティクル出すかの判定
+    public bool attackjudge;//攻撃するか判定
+    public bool onetime;//一回だけ実行用の
+    public bool atonetime;//攻撃を一回実行用
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
     private Vector3 _forwardDirection = Vector3.forward;
     // 自身のTransform
     [SerializeField] private Transform _self;
 
     // ターゲットのTransform
     [SerializeField] private Transform _target;
+<<<<<<< HEAD
 
+=======
+   // public GameObject _target;
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
     // 前方の基準となるローカル空間ベクトル
     [SerializeField] private Vector3 _forward = Vector3.forward;
 
@@ -69,7 +86,16 @@ public class Enemy : MonoBehaviour
 
 
         StartCoroutine(GenerateParticle());
+<<<<<<< HEAD
 
+=======
+        // プレイヤーのオブジェクトを検索し、その Transform コンポーネントを _target に格納
+        GameObject player = GameObject.FindGameObjectWithTag("player");
+        if (player != null)
+        {
+            _target = player.transform;
+        }
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
 
 
     }
@@ -80,9 +106,15 @@ public class Enemy : MonoBehaviour
         //RotateSelf();
 
         Move();
+<<<<<<< HEAD
 
         Attack();
         Dmg();
+=======
+        Attack();
+        Dmg();
+       //攻撃判定にしようする、自身のターゲットに指定した対象の距離を測る
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
         distance = Vector3.Distance(_self.position, _target.position);
 
         //StartParticle();
@@ -94,18 +126,30 @@ public class Enemy : MonoBehaviour
     //distanceがattackdistance未満になったらmovejudgeをfalseにする
     void Move()
     {
+<<<<<<< HEAD
         if (distance < attackdistance)
         {
             movejudge = false;
         }
         else { StartCoroutine(DelayCoroutine()); }
+=======
+        if (distance < attackdistance)//自身とターゲットの距離が１０未満なら
+        {
+            movejudge = false;
+        }
+        else { StartCoroutine(DelayCoroutine()); }//１秒待ってmovejudgeをtrueにする
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
         if (movejudge)
         {
             Vector3 moveDirection = transform.TransformDirection(_forwardDirection);
             rb.velocity = moveDirection * moveSpeed;
         }
     }
+<<<<<<< HEAD
    //プレイヤーの方向を向く
+=======
+    //プレイヤーの方向を向く
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
     void RotateSelf()
     {
         // ターゲットへの向きベクトル計算
@@ -212,7 +256,11 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
+<<<<<<< HEAD
             // 敵との距離が10未満なら
+=======
+            // 敵との距離が10未満でparticlejudgeがtrueなら
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
             if (distance < attackdistance && particlejudge)
             {
                 GenerateNewParticle();

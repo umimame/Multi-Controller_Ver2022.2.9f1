@@ -6,6 +6,7 @@ PlayerSettings:
   serializedVersion: 26
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   productGUID: f3ff7fa0a74d03d4492f8735a5d5de85
 =======
   productGUID: 42c147642b24c8f4cb20002860b0fb75
@@ -13,6 +14,9 @@ PlayerSettings:
 =======
   productGUID: 42c147642b24c8f4cb20002860b0fb75
 >>>>>>> 44f30609 (First Commit)
+=======
+  productGUID: 42c147642b24c8f4cb20002860b0fb75
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -23,6 +27,7 @@ PlayerSettings:
   companyName: DefaultCompany
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   productName: 3DMap
 =======
   productName: Multi-Controller
@@ -30,6 +35,9 @@ PlayerSettings:
 =======
   productName: Multi-Controller
 >>>>>>> 44f30609 (First Commit)
+=======
+  productName: Multi-Controller
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -761,6 +769,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   metroPackageName: 3DMap
 =======
   metroPackageName: Multi-Controller
@@ -768,12 +777,16 @@ PlayerSettings:
 =======
   metroPackageName: Multi-Controller
 >>>>>>> 44f30609 (First Commit)
+=======
+  metroPackageName: Multi-Controller
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   metroApplicationDescription: 3DMap
@@ -783,6 +796,9 @@ PlayerSettings:
 =======
   metroApplicationDescription: Multi-Controller
 >>>>>>> 44f30609 (First Commit)
+=======
+  metroApplicationDescription: Multi-Controller
+>>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
