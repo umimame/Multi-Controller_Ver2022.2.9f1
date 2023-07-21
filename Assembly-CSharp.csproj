@@ -9,7 +9,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
+<<<<<<< HEAD
     <ProjectGuid>{69804CAA-703B-CB1C-C6A7-E71794DD6F78}</ProjectGuid>
+=======
+    <ProjectGuid>{3F1CD0C8-7314-6292-FF72-33E18BFBBB0B}</ProjectGuid>
+>>>>>>> 8cdde017 (no message)
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,10 +62,17 @@
     <Analyzer Include="C:\Program Files\Unity 2022.2.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Assets\script\PlayerController.cs" />
     <Compile Include="Assets\script\Enemy.cs" />
     <Compile Include="Assets\script\Destroy.cs" />
     <Compile Include="Assets\script\CollisionDetector.cs" />
+=======
+    <Compile Include="Assets\player.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Nature\GrassAndFlowers\Info.txt" />
+>>>>>>> 8cdde017 (no message)
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -718,6 +729,7 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="Unity.AI.Navigation">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
     </Reference>
@@ -727,6 +739,11 @@
     <Reference Include="Unity.AI.Navigation.Updater">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
     </Reference>
+=======
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+>>>>>>> 8cdde017 (no message)
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
@@ -757,6 +774,7 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="Unity.AI.Navigation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
     </Reference>
@@ -766,6 +784,11 @@
     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
     </Reference>
+=======
+    <Reference Include="Unity.VisualScripting.State">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+>>>>>>> 8cdde017 (no message)
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>

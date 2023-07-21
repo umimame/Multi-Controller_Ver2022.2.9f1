@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Enemy01.unity
+=======
+- path: Assets/Scenes/MapScene.unity
+>>>>>>> 8cdde017 (no message)
   isLoaded: 1
   isActive: 1
   isSubScene: 0
