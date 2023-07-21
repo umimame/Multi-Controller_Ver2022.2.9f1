@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
+<<<<<<< HEAD
   productGUID: f3ff7fa0a74d03d4492f8735a5d5de85
+=======
+  productGUID: 42c147642b24c8f4cb20002860b0fb75
+>>>>>>> 44f30609 (First Commit)
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +17,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
+<<<<<<< HEAD
   productName: 3DMap
+=======
+  productName: Multi-Controller
+>>>>>>> 44f30609 (First Commit)
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -743,14 +751,22 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
+<<<<<<< HEAD
   metroPackageName: 3DMap
+=======
+  metroPackageName: Multi-Controller
+>>>>>>> 44f30609 (First Commit)
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
+<<<<<<< HEAD
   metroApplicationDescription: 3DMap
+=======
+  metroApplicationDescription: Multi-Controller
+>>>>>>> 44f30609 (First Commit)
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
