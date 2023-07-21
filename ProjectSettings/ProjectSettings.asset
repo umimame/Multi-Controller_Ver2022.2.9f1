@@ -5,7 +5,11 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
 <<<<<<< HEAD
+<<<<<<< HEAD
   productGUID: f3ff7fa0a74d03d4492f8735a5d5de85
+=======
+  productGUID: 42c147642b24c8f4cb20002860b0fb75
+>>>>>>> 44f30609 (First Commit)
 =======
   productGUID: 42c147642b24c8f4cb20002860b0fb75
 >>>>>>> 44f30609 (First Commit)
@@ -18,7 +22,11 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
 <<<<<<< HEAD
+<<<<<<< HEAD
   productName: 3DMap
+=======
+  productName: Multi-Controller
+>>>>>>> 44f30609 (First Commit)
 =======
   productName: Multi-Controller
 >>>>>>> 44f30609 (First Commit)
@@ -752,7 +760,11 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   metroPackageName: 3DMap
+=======
+  metroPackageName: Multi-Controller
+>>>>>>> 44f30609 (First Commit)
 =======
   metroPackageName: Multi-Controller
 >>>>>>> 44f30609 (First Commit)
@@ -763,7 +775,11 @@ PlayerSettings:
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
 <<<<<<< HEAD
+<<<<<<< HEAD
   metroApplicationDescription: 3DMap
+=======
+  metroApplicationDescription: Multi-Controller
+>>>>>>> 44f30609 (First Commit)
 =======
   metroApplicationDescription: Multi-Controller
 >>>>>>> 44f30609 (First Commit)

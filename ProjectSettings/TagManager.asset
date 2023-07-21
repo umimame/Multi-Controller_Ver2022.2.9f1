@@ -3,10 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - player
   - enemy
   - shot
+=======
+  tags: []
+>>>>>>> 44f30609 (First Commit)
   layers:
   - Default
   - TransparentFX
