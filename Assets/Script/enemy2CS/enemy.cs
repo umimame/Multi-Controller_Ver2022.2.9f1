@@ -9,9 +9,6 @@ public class Enemy : MonoBehaviour
 {
     private Rigidbody rb;
 <<<<<<< HEAD
-    private int hp;
-    public int score;
-=======
     private int hp;//自身のhp
     public int score;//倒したときにプレイヤーに加算されるスコア
 >>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
@@ -20,12 +17,6 @@ public class Enemy : MonoBehaviour
     public float attackspeed;//攻撃時のスピード
     public float distance;//自身とターゲットの距離
 <<<<<<< HEAD
-    public bool movejudge;
-    public bool particlejudge;
-    public bool attackjudge;
-    public bool onetime;
-    public bool atonetime;
-=======
     public bool movejudge;//移動判定
     public bool particlejudge;//パーティクル出すかの判定
     public bool attackjudge;//攻撃するか判定
@@ -40,7 +31,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform _target;
 <<<<<<< HEAD
 
-=======
    // public GameObject _target;
 >>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
     // 前方の基準となるローカル空間ベクトル
@@ -88,7 +78,6 @@ public class Enemy : MonoBehaviour
         StartCoroutine(GenerateParticle());
 <<<<<<< HEAD
 
-=======
         // プレイヤーのオブジェクトを検索し、その Transform コンポーネントを _target に格納
         GameObject player = GameObject.FindGameObjectWithTag("player");
         if (player != null)
@@ -107,10 +96,6 @@ public class Enemy : MonoBehaviour
 
         Move();
 <<<<<<< HEAD
-
-        Attack();
-        Dmg();
-=======
         Attack();
         Dmg();
        //攻撃判定にしようする、自身のターゲットに指定した対象の距離を測る
@@ -127,12 +112,6 @@ public class Enemy : MonoBehaviour
     void Move()
     {
 <<<<<<< HEAD
-        if (distance < attackdistance)
-        {
-            movejudge = false;
-        }
-        else { StartCoroutine(DelayCoroutine()); }
-=======
         if (distance < attackdistance)//自身とターゲットの距離が１０未満なら
         {
             movejudge = false;
@@ -146,8 +125,6 @@ public class Enemy : MonoBehaviour
         }
     }
 <<<<<<< HEAD
-   //プレイヤーの方向を向く
-=======
     //プレイヤーの方向を向く
 >>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
     void RotateSelf()
@@ -257,8 +234,6 @@ public class Enemy : MonoBehaviour
         while (true)
         {
 <<<<<<< HEAD
-            // 敵との距離が10未満なら
-=======
             // 敵との距離が10未満でparticlejudgeがtrueなら
 >>>>>>> 95f1cfdedd25eb7ff6977e479135cf4f219c2e6d
             if (distance < attackdistance && particlejudge)

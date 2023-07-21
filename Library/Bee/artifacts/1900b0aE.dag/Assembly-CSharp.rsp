@@ -358,6 +358,16 @@
 -analyzer:"C:/Program Files/Unity 2022.2.9f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity 2022.2.9f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/player.cs"
+"Assets/Script/enemy2CS/enemy.cs"
+"Assets/Script/enemy2CS/enemygenerator.cs"
+"Assets/Script/enemy2CS/Player.cs"
+"Assets/Script/enemy2CS/Shot.cs"
+"Assets/Script/enemy2CS/Shotgen.cs"
+"Assets/Script/enemy2CS/StartParticle.cs"
+"Assets/Script/Player/CameraScript.cs"
+"Assets/Script/Player/PlayerScript.cs"
+"Assets/Script/Player/Status.cs"
+"Assets/Script/PlayerScript.cs"
 -langversion:9.0
 
 /deterministic

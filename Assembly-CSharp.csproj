@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3F1CD0C8-7314-6292-FF72-33E18BFBBB0B}</ProjectGuid>
+    <ProjectGuid>{3259F923-B745-6D31-13A6-59F593AB9C97}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,7 +58,17 @@
     <Analyzer Include="C:\Program Files\Unity 2022.2.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Player\Status.cs" />
+    <Compile Include="Assets\Script\Player\PlayerScript.cs" />
     <Compile Include="Assets\player.cs" />
+    <Compile Include="Assets\Script\enemy2CS\enemy.cs" />
+    <Compile Include="Assets\Script\Player\CameraScript.cs" />
+    <Compile Include="Assets\Script\enemy2CS\enemygenerator.cs" />
+    <Compile Include="Assets\Script\enemy2CS\Shotgen.cs" />
+    <Compile Include="Assets\Script\enemy2CS\Shot.cs" />
+    <Compile Include="Assets\Script\PlayerScript.cs" />
+    <Compile Include="Assets\Script\enemy2CS\Player.cs" />
+    <Compile Include="Assets\Script\enemy2CS\StartParticle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Nature\GrassAndFlowers\Info.txt" />
