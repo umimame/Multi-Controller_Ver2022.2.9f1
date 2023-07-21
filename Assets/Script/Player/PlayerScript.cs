@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Parameter speed = new Parameter();
     [SerializeField] private Engine engine;
     [SerializeField] private MoveByCameraForward move;
-    
+    [SerializeField] private Vector3 cameraDirection;
     private void Start()
     {
         speed.Set();
@@ -22,6 +22,8 @@ public class PlayerScript : MonoBehaviour
     private void Update()
     {
         engine.UpdateOnAction(move.Update);
+        cameraDirection = Camera.main.transform.position - transform.position;
+        transform.eulerAngles = new Vector3(0.0f, cameraDirection.y, 0.0f);
     }
 
     private void InputMove()
